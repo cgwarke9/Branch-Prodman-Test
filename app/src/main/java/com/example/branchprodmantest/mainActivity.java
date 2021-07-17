@@ -15,6 +15,7 @@ import io.branch.indexing.BranchUniversalObject;
 import io.branch.referral.Branch;
 import io.branch.referral.BranchError;
 import io.branch.referral.SharingHelper;
+import io.branch.referral.util.ContentMetadata;
 import io.branch.referral.util.LinkProperties;
 import io.branch.referral.util.ShareSheetStyle;
 
@@ -31,7 +32,8 @@ public class mainActivity extends AppCompatActivity {
         shareButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                BranchUniversalObject buo = new BranchUniversalObject();
+                BranchUniversalObject buo = new BranchUniversalObject()
+                        .setContentMetadata(new ContentMetadata().addCustomMetadata(CHECK_KEY,KEY_VALUE));
 
                 LinkProperties lp = new LinkProperties()
                         .addControlParameter(CHECK_KEY, KEY_VALUE);
