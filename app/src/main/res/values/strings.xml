@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">Branch Prodman Test</string>
+    <string name="app_name">Branch ProdMan Test</string>
+    <string name="share_link">share</string>
+    <string name="deep_link_screen_text">deep link screen</string>
+    <string name="deep_link_catch_text">deep_link_test</string>
+
 </resources>
