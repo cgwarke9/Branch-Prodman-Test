@@ -85,24 +85,19 @@ public class mainActivity extends AppCompatActivity {
     private final Branch.BranchReferralInitListener branchReferralInitListener = new Branch.BranchReferralInitListener() {
         @Override
         public void onInitFinished(JSONObject linkProperties, BranchError error) {
-            // do stuff with deep link data (nav to page, display content, etc)
-
+            // Checking for key "deep_link_test" for value "other"
             if (linkProperties != null && linkProperties.length() != 0) {
-
-                String keyValue = null; //.toString();
+                String keyValue = null;
                 try {
                     keyValue = linkProperties.getString(CHECK_KEY);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-
-                if (KEY_VALUE.equals(keyValue))
-                {
+                if (KEY_VALUE.equals(keyValue)) {
                     //Start otherActivity
                     Intent intent = new Intent(mainActivity.this, otherActivity.class);
                     startActivity(intent);
                 }
-
             }
         }
     };
